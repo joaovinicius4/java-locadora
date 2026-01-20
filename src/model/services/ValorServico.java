@@ -1,6 +1,9 @@
 package model.services;
 
+import java.time.Duration;
+
 import model.entities.AluguelCarro;
+import model.entities.Fatura;
 
 public class ValorServico {
 
@@ -14,8 +17,21 @@ public class ValorServico {
 		this.taxaServico = taxaServico;
 	}
 	
-	public void processarFatura(AluguelCarro aluguelcarro) {
+	public void processarFatura(AluguelCarro aluguelCarro) {
 		
+		double minutos = Duration.between(aluguelCarro.getInicio(), aluguelCarro.getFim()).toMinutes();
+		double horas = minutos/60;
+		
+		double pagBasico;
+		if(horas <= 12) {
+			pagBasico = precoPorHora * Math.ceil(horas);
+		}
+		else {
+			pagBasico = precoPorDia * Math.ceil(horas/24);
+		}
+		
+		double taxa = taxaServico.taxa(pagBasico);
+		aluguelCarro.setFatura(new Fatura(pagBasico, taxa));
 	}
 	
 	
