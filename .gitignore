@@ -1,0 +1,7 @@
+# Pastas e arquivos de compilação
+bin/
+*.class
+
+# Arquivos de configuração do Eclipse
+.project
+.settings/
