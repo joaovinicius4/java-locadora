@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 import model.entities.AluguelCarro;
 import model.entities.Veiculos;
+import model.services.TaxaServico;
+import model.services.ValorServico;
 
 public class Locadora {
 
@@ -26,6 +28,15 @@ public class Locadora {
 		LocalDateTime fim = LocalDateTime.parse(sc.nextLine(), fmt);
 		
 		AluguelCarro carro = new AluguelCarro(inicio, fim, new Veiculos(modelo));
+		
+		System.out.print("Entre com o preço por hora: ");
+		double precoPorHora = sc.nextDouble();
+		System.out.print("Entre com o preço por dia: ");
+		double precoPorDia = sc.nextDouble();
+		
+	
+		ValorServico valorServico = new ValorServico(precoPorHora, precoPorDia, new TaxaServico());
+		
 		
 		sc.close();
 	}
