@@ -1,19 +1,20 @@
 package model.services;
 
+import model.entities.AluguelCarro;
+
 public class ValorServico {
 
 	private Double precoPorHora;
 	private Double precoPorDia;
-	private TaxaServico taxaservico;
+	private TaxaServico taxaServico;
 	
-	public ValorServico(Double precoPorHora, Double precoPorDia, TaxaServico taxaservico) {
+	public ValorServico(Double precoPorHora, Double precoPorDia, TaxaServico taxaServico) {
 		this.precoPorHora = precoPorHora;
 		this.precoPorDia = precoPorDia;
-		this.taxaservico = taxaservico;
+		this.taxaServico = taxaServico;
 	}
 	
 	public void processarFatura(AluguelCarro aluguelcarro) {
-		
 		
 	}
 	
