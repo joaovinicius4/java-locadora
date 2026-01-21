@@ -64,6 +64,9 @@ public class Locadora {
 				System.out.println("Entrada de dados invalida");
 				sc.nextLine();
 			}
+			catch(IllegalArgumentException e) {
+				System.out.println(e.getMessage());
+			}
 		}
 		
 		System.out.println();
