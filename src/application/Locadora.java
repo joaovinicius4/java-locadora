@@ -38,6 +38,7 @@ public class Locadora {
 		ValorServico valorServico = new ValorServico(precoPorHora, precoPorDia, new TaxaServico());
 		valorServico.processarFatura(carro);
 		
+		System.out.println();
 		System.out.println(carro);
 		
 		sc.close();

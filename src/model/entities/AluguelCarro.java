@@ -1,8 +1,11 @@
 package model.entities;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class AluguelCarro {
+	
+	DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 	
 	private LocalDateTime inicio;
 	private LocalDateTime fim;
@@ -52,9 +55,9 @@ public class AluguelCarro {
 	    return "Modelo do carro: "
 	            + veiculo
 	            + "\nRetirada: "
-	            + inicio
+	            + inicio.format(fmt)
 	            + "\nEntrega: "
-	            + fim
+	            + fim.format(fmt)
 	            + "\n\nFATURA:\n"
 	            + fatura;
 	}	
