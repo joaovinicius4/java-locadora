@@ -1,6 +1,6 @@
 package model.services;
 
-public class TaxaServico {
+public class TaxaServico implements InterfaceServico {
 	
 	public double taxa(double amount) {
 		
@@ -11,5 +11,3 @@ public class TaxaServico {
 		
 	}
 }
-	
-
