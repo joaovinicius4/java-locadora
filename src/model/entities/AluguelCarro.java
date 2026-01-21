@@ -10,10 +10,10 @@ public class AluguelCarro {
 	
 	private LocalDateTime inicio;
 	private LocalDateTime fim;
-	private Veiculos veiculo;
+	private Veiculo veiculo;
 	private Fatura fatura;
 	
-	public AluguelCarro(LocalDateTime inicio, LocalDateTime fim, Veiculos veiculo) {
+	public AluguelCarro(LocalDateTime inicio, LocalDateTime fim, Veiculo veiculo) {
 		
 		LocalDateTime now = LocalDateTime.now();
 		
@@ -46,11 +46,11 @@ public class AluguelCarro {
 		this.fim = fim;
 	}
 
-	public Veiculos getVeiculo() {
+	public Veiculo getVeiculo() {
 		return veiculo;
 	}
 
-	public void setVeiculo(Veiculos veiculo) {
+	public void setVeiculo(Veiculo veiculo) {
 		this.veiculo = veiculo;
 	}
 

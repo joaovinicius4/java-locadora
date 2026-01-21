@@ -8,7 +8,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import model.entities.AluguelCarro;
-import model.entities.Veiculos;
+import model.entities.Veiculo;
 import model.services.TaxaServico;
 import model.services.ValorServico;
 
@@ -34,7 +34,7 @@ public class Locadora {
 			System.out.print("Entrega (dd/MM/yyyy hh:mm): ");
 			LocalDateTime fim = LocalDateTime.parse(sc.nextLine(), fmt);
 			
-			carro = new AluguelCarro(inicio, fim, new Veiculos(modelo));
+			carro = new AluguelCarro(inicio, fim, new Veiculo(modelo));
 			valido = true;
 			}
 			catch(DateTimeParseException e) {
