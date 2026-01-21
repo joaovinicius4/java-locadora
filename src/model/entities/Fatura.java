@@ -35,5 +35,16 @@ public class Fatura {
 		return getPagamentoBasico() + getTaxa();
 	}
 	
+	@Override
+	public String toString() {
+	    return "Pagamento básico: "
+	            + String.format("%.2f", pagamentoBasico)
+	            + "\nTaxa: "
+	            + String.format("%.2f", taxa)
+	            + "\nPagamento total: "
+	            + String.format("%.2f", getPagamentoTotal());
+	}
+
+	
 	
 }

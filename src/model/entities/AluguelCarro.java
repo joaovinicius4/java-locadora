@@ -47,7 +47,16 @@ public class AluguelCarro {
 		this.fatura = fatura;
 	}
 	
-	
-	
+	@Override
+	public String toString() {
+	    return "Modelo do carro: "
+	            + veiculo
+	            + "\nRetirada: "
+	            + inicio
+	            + "\nEntrega: "
+	            + fim
+	            + "\n\nFATURA:\n"
+	            + fatura;
+	}	
 	
 }

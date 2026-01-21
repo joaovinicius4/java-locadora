@@ -15,4 +15,10 @@ public class Veiculos {
 		this.modelo = modelo;
 	}
 	
+	@Override
+	public String toString() {
+	    return modelo;
+	}
+
+	
 }

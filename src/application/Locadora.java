@@ -38,10 +38,7 @@ public class Locadora {
 		ValorServico valorServico = new ValorServico(precoPorHora, precoPorDia, new TaxaServico());
 		valorServico.processarFatura(carro);
 		
-		System.out.println("Fatura: ");
-		System.out.println("Pagamento Basico: " + carro.getFatura().getPagamentoBasico());
-		System.out.println("Imposto: " + carro.getFatura().getTaxa());
-		System.out.println("Pagamento Total: "+ carro.getFatura().getPagamentoTotal());
+		System.out.println(carro);
 		
 		sc.close();
 	}
