@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class AluguelCarro {
 	
-	DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+	private static final DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 	
 	private LocalDateTime inicio;
 	private LocalDateTime fim;
