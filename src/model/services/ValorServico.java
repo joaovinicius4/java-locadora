@@ -9,9 +9,9 @@ public class ValorServico {
 
 	private Double precoPorHora;
 	private Double precoPorDia;
-	private TaxaServico taxaServico;
+	private InterfaceServico taxaServico;
 	
-	public ValorServico(Double precoPorHora, Double precoPorDia, TaxaServico taxaServico) {
+	public ValorServico(Double precoPorHora, Double precoPorDia, InterfaceServico taxaServico) {
 		this.precoPorHora = precoPorHora;
 		this.precoPorDia = precoPorDia;
 		this.taxaServico = taxaServico;
