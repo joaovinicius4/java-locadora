@@ -3,6 +3,7 @@ package application;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -46,14 +47,24 @@ public class Locadora {
 			}
 		}
 		
-		System.out.print("Entre com o preço por hora: ");
-		double precoPorHora = sc.nextDouble();
-		System.out.print("Entre com o preço por dia: ");
-		double precoPorDia = sc.nextDouble();
+		valido = false;
+		ValorServico valorServico = null;
 		
-	
-		ValorServico valorServico = new ValorServico(precoPorHora, precoPorDia, new TaxaServico());
-		valorServico.processarFatura(carro);
+		while(!valido) {
+			try {
+				System.out.print("Entre com o preço por hora: ");
+				double precoPorHora = sc.nextDouble();
+				System.out.print("Entre com o preço por dia: ");
+				double precoPorDia = sc.nextDouble();
+				valorServico = new ValorServico(precoPorHora, precoPorDia, new TaxaServico());
+				valorServico.processarFatura(carro);
+				valido = true;
+			}
+			catch(InputMismatchException e) {
+				System.out.println("Entrada de dados invalida");
+				sc.nextLine();
+			}
+		}
 		
 		System.out.println();
 		System.out.println(carro);
