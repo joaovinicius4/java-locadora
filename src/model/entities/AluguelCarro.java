@@ -1,5 +1,6 @@
 package model.entities;
 
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -13,6 +14,17 @@ public class AluguelCarro {
 	private Fatura fatura;
 	
 	public AluguelCarro(LocalDateTime inicio, LocalDateTime fim, Veiculos veiculo) {
+		
+		LocalDateTime now = LocalDateTime.now();
+		
+		if(inicio.isBefore(now)) {
+			throw new IllegalArgumentException("As reservas precisam ser depois da data atual");
+		}
+		
+		if(inicio.isAfter(fim) || inicio.isEqual(fim)) {
+			throw new IllegalArgumentException("O data de retirada precisa ser antes da data de entrega");
+		}
+		
 		this.inicio = inicio;
 		this.fim = fim;
 		this.veiculo = veiculo;

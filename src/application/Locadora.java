@@ -38,6 +38,11 @@ public class Locadora {
 			}
 			catch(DateTimeParseException e) {
 				System.out.println("Formato da data errado");
+				System.out.println();
+			}
+			catch(IllegalArgumentException e) {
+				System.out.println(e.getMessage());
+				System.out.println();
 			}
 		}
 		
